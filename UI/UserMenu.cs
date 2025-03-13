@@ -16,35 +16,51 @@ namespace UserRegister.UI
         public void MainMenu()
         {
             var menuRunning = true;
+
+            Console.Write("Digite o nome de usuário: ");
+            var userName = Console.ReadLine();
+            Console.Write("Digite a senha: ");
+            var userSenha = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+            while (userName != "welly" || userSenha != 1234)
+            {
+                Console.WriteLine("Usuário ou senha incorretos. Por favor, tente novamente.");
+                Console.Write("Digite o nome de usuário: ");
+                userName = Console.ReadLine();
+                Console.Write("Digite a senha: ");
+                userSenha = int.Parse(Console.ReadLine());
+            }
+
             while (menuRunning)
             {
                 Console.WriteLine("Selecione a opção desejada: ");
-                Console.WriteLine("1 - Criar usuário / 2 - Obter usuário / 3 - Sair");
-                if (!int.TryParse(Console.ReadLine(), out int userChoice))
-                {
-                    Console.WriteLine("Entrada inválida. Por favor, digite um número.");
-                    continue;
+                    Console.WriteLine("1 - Criar usuário / 2 - Obter usuário / 3 - Sair");
+                    if (!int.TryParse(Console.ReadLine(), out int userChoice))
+                    {
+                        Console.WriteLine("Entrada inválida. Por favor, digite um número.");
+                        continue;
+                    }
+
+                    switch (userChoice)
+                    {
+                        case 1:
+                            CreateUserMenu();
+                            break;
+                        case 2:
+                            GetUserMenu();
+                            break;
+                        case 3:
+                            menuRunning = false;
+                            break;
+                        default:
+                            Console.WriteLine("Opção inválida, tente novamente.");
+                            break;
+
+                    }
+
                 }
-
-                switch (userChoice)
-                {
-                    case 1:
-                        CreateUserMenu();
-                        break;
-                    case 2:
-                        GetUserMenu();
-                        break;
-                    case 3:
-                        menuRunning = false;
-                        break;
-                    default:
-                        Console.WriteLine("Opção inválida, tente novamente.");
-                        break;
-
-                }
-
             }
-        }
+
 
         public void CreateUserMenu()
         {

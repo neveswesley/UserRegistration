@@ -12,3 +12,4 @@ D:\Cursos\DEV TO THE USA\estudos\MeusProjetos\C#\UserRegister\UserRegister\obj\D
 D:\Cursos\DEV TO THE USA\estudos\MeusProjetos\C#\UserRegister\UserRegister\obj\Debug\net8.0\UserRegister.pdb
 D:\Cursos\DEV TO THE USA\estudos\MeusProjetos\C#\UserRegister\UserRegister\obj\Debug\net8.0\UserRegister.genruntimeconfig.cache
 D:\Cursos\DEV TO THE USA\estudos\MeusProjetos\C#\UserRegister\UserRegister\obj\Debug\net8.0\ref\UserRegister.dll
+D:\Cursos\DEV TO THE USA\estudos\MeusProjetos\C#\UserRegister\UserRegister\obj\Debug\net8.0\UserRegister.sourcelink.json
