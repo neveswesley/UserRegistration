@@ -20,15 +20,15 @@ namespace UserRegister.UI
             Console.Write("Digite o nome de usuário: ");
             var userName = Console.ReadLine();
             Console.Write("Digite a senha: ");
-            var userSenha = int.Parse(Console.ReadLine());
+            var password = int.Parse(Console.ReadLine());
             Console.WriteLine();
-            while (userName != "welly" || userSenha != 1234)
+            while (userName != "welly" || password != 1234)
             {
                 Console.WriteLine("Usuário ou senha incorretos. Por favor, tente novamente.");
                 Console.Write("Digite o nome de usuário: ");
                 userName = Console.ReadLine();
                 Console.Write("Digite a senha: ");
-                userSenha = int.Parse(Console.ReadLine());
+                password = int.Parse(Console.ReadLine());
             }
 
             while (menuRunning)
