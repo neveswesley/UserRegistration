@@ -2,35 +2,49 @@
 
 namespace UserRegister.Repositories
 {
-    internal class UserRepository
+    internal class UserRepository : IRepository
     {
 
-        public List<User> Users = new List<User>();
+        public int Id { get; set; }
+        public string Name { get; set; }
 
-        public void CreateNewUser(User user)
+        List<User> _users;
+
+        public UserRepository(List<User> users)
         {
-            Users.Add(user);
+            _users = users;
+        }
+        public void CreateNewUser(User users)
+        {
+            _users.Add(users);
         }
 
         public void UpdateUser(User newUserModel, int id)
         {
-            var userToUpdate = Users.Where(x => x.Id == id).First();
-            Users.Remove(userToUpdate);
+            var userToUpdate = _users.Where(x => x.Id == id).First();
+            _users.Remove(userToUpdate);
 
             userToUpdate.Name = newUserModel.Name;
-            Users.Add(userToUpdate);
+            _users.Add(userToUpdate);
         }
 
         public User GetUser(int requestedId)
         {
-            var user = Users.Where(x => x.Id == requestedId).FirstOrDefault();
+            var user = _users.Where(x => x.Id == requestedId).FirstOrDefault();
             return user;
         }
 
-        public void DeleteUser(User user)
+        public void DeleteUser(int requestedId)
         {
-            Users.Remove(user);
+            var user = _users.Where(x => x.Id == requestedId).FirstOrDefault();
+
+        }
+
+        public List<User> GetAllUsers()
+        {
+            return _users;
         }
 
     }
+
 }

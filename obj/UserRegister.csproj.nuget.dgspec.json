@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Cursos\\DEV TO THE USA\\estudos\\MeusProjetos\\C#\\UserRegister\\UserRegister\\UserRegister.csproj": {}
+    "D:\\Cursos\\DEV TO THE USA\\00 - Minha carreira\\Projetos\\01 - Cadastro de usuário e busca por ID\\UserRegister\\UserRegister\\UserRegister.csproj": {}
   },
   "projects": {
-    "D:\\Cursos\\DEV TO THE USA\\estudos\\MeusProjetos\\C#\\UserRegister\\UserRegister\\UserRegister.csproj": {
+    "D:\\Cursos\\DEV TO THE USA\\00 - Minha carreira\\Projetos\\01 - Cadastro de usuário e busca por ID\\UserRegister\\UserRegister\\UserRegister.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Cursos\\DEV TO THE USA\\estudos\\MeusProjetos\\C#\\UserRegister\\UserRegister\\UserRegister.csproj",
+        "projectUniqueName": "D:\\Cursos\\DEV TO THE USA\\00 - Minha carreira\\Projetos\\01 - Cadastro de usuário e busca por ID\\UserRegister\\UserRegister\\UserRegister.csproj",
         "projectName": "UserRegister",
-        "projectPath": "D:\\Cursos\\DEV TO THE USA\\estudos\\MeusProjetos\\C#\\UserRegister\\UserRegister\\UserRegister.csproj",
+        "projectPath": "D:\\Cursos\\DEV TO THE USA\\00 - Minha carreira\\Projetos\\01 - Cadastro de usuário e busca por ID\\UserRegister\\UserRegister\\UserRegister.csproj",
         "packagesPath": "C:\\Users\\wesle\\.nuget\\packages\\",
-        "outputPath": "D:\\Cursos\\DEV TO THE USA\\estudos\\MeusProjetos\\C#\\UserRegister\\UserRegister\\obj\\",
+        "outputPath": "D:\\Cursos\\DEV TO THE USA\\00 - Minha carreira\\Projetos\\01 - Cadastro de usuário e busca por ID\\UserRegister\\UserRegister\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
