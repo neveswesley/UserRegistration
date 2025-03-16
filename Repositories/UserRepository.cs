@@ -37,7 +37,7 @@ namespace UserRegister.Repositories
         public void DeleteUser(int requestedId)
         {
             var user = _users.Where(x => x.Id == requestedId).FirstOrDefault();
-
+            _users.Remove(user);
         }
 
         public List<User> GetAllUsers()

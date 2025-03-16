@@ -1,8 +1,6 @@
 ﻿using UserRegister.Entities;
 using UserRegister.Repositories;
-using System.Collections.Generic;
 using UserRegister.Enums;
-using System.Threading.Channels;
 
 namespace UserRegister.UI
 {
