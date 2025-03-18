@@ -33,6 +33,7 @@ namespace UserRegister.UI
                 var userName = Console.ReadLine();
 
                 int password;
+
                 while (true)
                 {
                     Console.Write("Digite a senha: ");
@@ -146,111 +147,70 @@ namespace UserRegister.UI
             }
 
             Console.WriteLine("Atualizar usuário");
-            Console.WriteLine("Digite o ID do usuário: ");
-            if (!int.TryParse(Console.ReadLine(), out int id))
-            {
-                Console.WriteLine("ID inválido.");
-                return;
-            }
+            int id;
+            var user = (User)null;
 
-            var user = _userRepository.GetUser(id);
-
-            while (user == null)
+            do
             {
-                Console.WriteLine("Usuário não encontrado.");
                 Console.WriteLine("Digite o ID do usuário: ");
                 if (!int.TryParse(Console.ReadLine(), out id))
                 {
-                    Console.WriteLine("ID inválido.");
-                    return;
+                    Console.WriteLine("ID inválido. Tente novamente.");
+                    continue;
                 }
 
-                return;
-            }
+                user = _userRepository.GetUser(id);
 
-            Console.WriteLine("Qual informação você gostaria de atualizar? (1 - Nome / 2 - ID / 3 - Ambos)");
+                if (user == null)
+                {
+                    Console.WriteLine("Usuário não encontrado. Tente novamente.");
+                }
 
-            if (!int.TryParse(Console.ReadLine(), out int userChoice))
-            {
-                Console.WriteLine("Escolha inválida.");
-                return;
-            }
+            } 
+            
+            while (user == null);
+                {
+                    Console.WriteLine("Qual informação você gostaria de atualizar? (1 - Nome / 2 - ID / 3 - Ambos)");
 
-            switch (userChoice)
-            {
-                case 1:
-                    Console.WriteLine("Novo nome de usuário: ");
-                    var newUsername = Console.ReadLine();
-
-                    if (!string.IsNullOrWhiteSpace(newUsername))
+                    if (!int.TryParse(Console.ReadLine(), out int userChoice))
                     {
+                        Console.WriteLine("Escolha inválida.");
+                        return;
+                    }
+
+
+                    if (userChoice == 1 || userChoice == 3)
+                    {
+                        Console.WriteLine("Novo nome de usuário: ");
+                        var newUsername = Console.ReadLine();
+
+                        if (string.IsNullOrWhiteSpace(newUsername))
+                        {
+                            Console.WriteLine("Nome inválido.");
+                            return;
+                        }
+
                         user.Name = newUsername;
-                        _userRepository.UpdateUser(user, user.Id);
                         Console.WriteLine("Nome atualizado com sucesso!");
                     }
 
-                    else
+                    if (userChoice == 2 || userChoice == 3)
                     {
-                        Console.WriteLine("Nome inválido.");
-                    }
-                    break;
+                        Console.WriteLine("Novo ID: ");
+                        if (!int.TryParse(Console.ReadLine(), out int newID))
+                        {
+                            Console.WriteLine("ID inválido. Tente novamenete: ");
+                            return;
 
-                case 2:
-                    Console.WriteLine("Novo Id do usuário: ");
-                    if (!int.TryParse(Console.ReadLine(), out int newId))
-                    {
-                        Console.WriteLine("Id inválido.");
-                        return;
-                    }
+                        }
 
-                    var existingUSer = _userRepository.GetUser(newId);
-                    if (existingUSer != null)
-                    {
-                        Console.WriteLine("Já existe um usuário com esse ID.");
-                        return;
-                    };
+                        user.Id = newID;
 
-                    user.Id = newId;
-                    _userRepository.UpdateUser(user, newId);
-                    Console.WriteLine("Id atualizado com sucesso!");
-                    break;
-
-                case 3:
-                    Console.WriteLine("Novo nome de usuário: ");
-                    newUsername = Console.ReadLine();
-
-                    if (!string.IsNullOrWhiteSpace(newUsername))
-                    {
-                        user.Name = newUsername;
-                        _userRepository.UpdateUser(user, user.Id);
-                        Console.WriteLine("Nome atualizado com sucesso!");
                     }
 
-                    else
-                    {
-                        Console.WriteLine("Nome inválido.");
-                    }
-
-                    Console.WriteLine("Novo Id do usuário: ");
-                    if (!int.TryParse(Console.ReadLine(), out newId))
-                    {
-                        Console.WriteLine("Id inválido.");
-                        return;
-                    }
-
-                    existingUSer = _userRepository.GetUser(newId);
-                    if (existingUSer != null)
-                    {
-                        Console.WriteLine("Já existe um usuário com esse ID.");
-                        return;
-                    };
-
-                    user.Id = newId;
-                    _userRepository.UpdateUser(user, newId);
-                    Console.WriteLine("Id atualizado com sucesso!");
-                    break;
+                }
             }
-        }
+
 
         public void DeleteUser()
         {

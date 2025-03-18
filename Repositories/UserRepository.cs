@@ -5,8 +5,8 @@ namespace UserRegister.Repositories
     internal class UserRepository : IRepository
     {
 
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int Id { get; private set; }
+        public string Name { get; private set; }
 
         List<User> _users;
 
